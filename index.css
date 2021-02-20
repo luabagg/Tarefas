@@ -1,0 +1,58 @@
+body, h1 {
+    font-family: "Raleway", Arial, sans-serif;
+}
+
+h1 {
+    letter-spacing: 6px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table .content { 
+    width: 100% 
+}
+
+th {
+    background-color: #f44336;
+    color: white;
+}
+
+th, td {
+    min-width: 120px;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tarefas, #responsaveis, #categorias {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10%;
+    font-size: 150%;
+}
+
+#edit {
+    margin: 5%;
+}
+
+#edit:link, #edit:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#edit:hover, #edit:active {
+    background-color: red;
+}
