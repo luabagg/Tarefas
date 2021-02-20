@@ -1,0 +1,17 @@
+{
+    "name": "luabagg/dsi",
+    "authors": [
+        {
+            "name": "luabagg",
+            "email": "luanbaggio0@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "../classes",
+            "../controllers",
+            "../models",
+            "../services"
+        ]
+    }
+}
