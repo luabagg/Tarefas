@@ -16,17 +16,18 @@
             <input type="hidden" name="id" value="<?php echo $responsavel->getId(); ?>">
 
             <div class="field" tabindex="1">
-                <label for="nome">Nome</label>
+                <label for="nome">Nome*</label>
                 <input type="text" id="nome" name="nome" minlength="5" maxlength="50" placeholder="Nome" required value="<?php echo $responsavel->getNome(); ?>">
             </div>
 
             <div class="field" tabindex="2">
-                <label for="email">E-mail</label>
+                <label for="email">E-mail*</label>
                 <input type="email" id="email" name="email" minlength="5" maxlength="50" placeholder="Email" required value="<?php echo $responsavel->getEmail(); ?>">
             </div>
 
             <button type="submit">Salvar</button>
             <a href='../index.php#Responsaveis'>Cancelar</a>
+            <p>Campos destacados com * são obrigatórios.</p>
         </form>
     </div>
 

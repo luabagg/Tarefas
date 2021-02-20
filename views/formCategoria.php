@@ -16,12 +16,13 @@
             <input type="hidden" name="id" value="<?php echo $categoria->getId(); ?>">
 
             <div class="field" tabindex="1">
-                <label for="nome">Nome</label>
+                <label for="nome">Nome*</label>
                 <input type="text" id="nome" name="nome" minlength="5" maxlength="50" required placeholder="Nome" value="<?php echo $categoria->getNome(); ?>">
             </div>
 
             <button type="submit">Salvar</button>
             <a href='../index.php#Categorias'>Cancelar</a>
+            <p>Campos destacados com * são obrigatórios.</p>
         </form>
     </div>
 
