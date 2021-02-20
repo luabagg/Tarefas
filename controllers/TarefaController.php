@@ -31,7 +31,7 @@ final class TarefaController extends Controller
         $categoriaModel = new CategoriaModel();
         $categorias = $categoriaModel->selectAll();
 
-        $responsavelModel = new CategoriaModel();
+        $responsavelModel = new ResponsavelModel();
         $responsaveis = $responsavelModel->selectAll();
 
         $this->loadView("formTarefa", [

@@ -48,7 +48,7 @@
             <div class="field" tabindex="6">
                 <label for="id_categoria">Categoria</label>
                 <select id="id_categoria" name="id_categoria">
-                    <option value=""><?php echo (sizeof($responsaveis) > 0 ? "Selecione" : "Cadastre uma categoria primeiro!"); ?></option>
+                    <option value=""><?php echo (sizeof($categorias) > 0 ? "Selecione" : "Cadastre uma categoria primeiro!"); ?></option>
                     <?php foreach ($categorias as $categoria) { ?>
                         <option value="<?php echo $categoria->getId() ?>" <?php echo ($categoria->getId() == $tarefa->getIdCategoria()) ? "selected" : "" ?>>
                             <?php echo $categoria->getNome() ?>
