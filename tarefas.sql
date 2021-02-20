@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 20-Fev-2021 às 03:44
+-- Tempo de geração: 20-Fev-2021 às 04:49
 -- Versão do servidor: 8.0.23
 -- versão do PHP: 7.4.3
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` bigint NOT NULL,
-  `nome` varchar(50) DEFAULT NULL
+  `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE `categoria` (
 
 CREATE TABLE `responsavel` (
   `id` bigint NOT NULL,
-  `nome` varchar(50) DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
   `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -54,8 +54,9 @@ CREATE TABLE `responsavel` (
 CREATE TABLE `tarefa` (
   `id` bigint NOT NULL,
   `id_categoria` bigint NOT NULL,
+  `id_responsavel` bigint NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `descricao` text NOT NULL,
+  `descricao` text DEFAULT NULL,
   `abertura` date NOT NULL,
   `prazo` smallint NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0'
@@ -82,7 +83,8 @@ ALTER TABLE `responsavel`
 --
 ALTER TABLE `tarefa`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_categoria` (`id_categoria`);
+  ADD KEY `id_categoria` (`id_categoria`),
+  ADD KEY `tarefa_ibfk_2` (`id_responsavel`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -114,7 +116,8 @@ ALTER TABLE `tarefa`
 -- Limitadores para a tabela `tarefa`
 --
 ALTER TABLE `tarefa`
-  ADD CONSTRAINT `tarefa_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`);
+  ADD CONSTRAINT `tarefa_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`),
+  ADD CONSTRAINT `tarefa_ibfk_2` FOREIGN KEY (`id_responsavel`) REFERENCES `responsavel` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
